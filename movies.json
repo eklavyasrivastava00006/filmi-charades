@@ -1,272 +1,542 @@
 [
   {
-    "id": 1,
-    "title": "Awaara",
-    "year": 1951,
-    "maleLead": "Raj Kapoor",
-    "femaleLead": "Nargis",
+    "id": 31,
+    "title": "Anand",
+    "year": 1971,
+    "maleLead": "Rajesh Khanna",
+    "femaleLead": "Sumita Sanyal",
+    "genre": ["Drama"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 32,
+    "title": "Haathi Mere Saathi",
+    "year": 1971,
+    "maleLead": "Rajesh Khanna",
+    "femaleLead": "Tanuja",
+    "genre": ["Drama", "Family"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 33,
+    "title": "Amar Prem",
+    "year": 1972,
+    "maleLead": "Rajesh Khanna",
+    "femaleLead": "Sharmila Tagore",
     "genre": ["Drama", "Romance"],
     "difficulty": "Easy"
   },
   {
-    "id": 2,
-    "title": "Baazi",
-    "year": 1951,
-    "maleLead": "Dev Anand",
-    "femaleLead": "Geeta Bali",
-    "genre": ["Crime", "Drama"],
-    "difficulty": "Medium"
-  },
-  {
-    "id": 3,
-    "title": "Aan",
-    "year": 1952,
-    "maleLead": "Dilip Kumar",
-    "femaleLead": "Nadira",
-    "genre": ["Drama", "Romance"],
-    "difficulty": "Medium"
-  },
-  {
-    "id": 4,
-    "title": "Daag",
-    "year": 1952,
-    "maleLead": "Dilip Kumar",
-    "femaleLead": "Nimmi",
-    "genre": ["Drama", "Romance"],
-    "difficulty": "Medium"
-  },
-  {
-    "id": 5,
-    "title": "Aar Paar",
-    "year": 1954,
-    "maleLead": "Guru Dutt",
-    "femaleLead": "Shyama",
-    "genre": ["Romance", "Drama"],
+    "id": 34,
+    "title": "Seeta Aur Geeta",
+    "year": 1972,
+    "maleLead": "Dharmendra",
+    "femaleLead": "Hema Malini",
+    "genre": ["Comedy", "Action"],
     "difficulty": "Easy"
   },
   {
-    "id": 6,
-    "title": "Amar",
-    "year": 1954,
-    "maleLead": "Dilip Kumar",
-    "femaleLead": "Madhubala",
+    "id": 35,
+    "title": "Yaadon Ki Baaraat",
+    "year": 1973,
+    "maleLead": "Dharmendra",
+    "femaleLead": "Zeenat Aman",
+    "genre": ["Action", "Drama"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 36,
+    "title": "Zanjeer",
+    "year": 1973,
+    "maleLead": "Amitabh Bachchan",
+    "femaleLead": "Jaya Bachchan",
+    "genre": ["Action", "Crime"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 37,
+    "title": "Abhimaan",
+    "year": 1973,
+    "maleLead": "Amitabh Bachchan",
+    "femaleLead": "Jaya Bachchan",
+    "genre": ["Drama", "Romance"],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 38,
+    "title": "Namak Haraam",
+    "year": 1973,
+    "maleLead": "Rajesh Khanna",
+    "femaleLead": "Simí Garewal",
     "genre": ["Drama"],
     "difficulty": "Medium"
   },
   {
-    "id": 7,
-    "title": "Boot Polish",
-    "year": 1954,
-    "maleLead": "David",
-    "femaleLead": "Baby Naaz",
+    "id": 39,
+    "title": "Aap Ki Kasam",
+    "year": 1974,
+    "maleLead": "Rajesh Khanna",
+    "femaleLead": "Mumtaz",
+    "genre": ["Romance", "Drama"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 40,
+    "title": "Rajnigandha",
+    "year": 1974,
+    "maleLead": "Amol Palekar",
+    "femaleLead": "Vidya Sinha",
+    "genre": ["Romance", "Drama"],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 41,
+    "title": "Sholay",
+    "year": 1975,
+    "maleLead": "Amitabh Bachchan",
+    "femaleLead": "Hema Malini",
+    "genre": ["Action", "Drama"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 42,
+    "title": "Deewaar",
+    "year": 1975,
+    "maleLead": "Amitabh Bachchan",
+    "femaleLead": "Parveen Babi",
+    "genre": ["Action", "Crime"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 43,
+    "title": "Chupke Chupke",
+    "year": 1975,
+    "maleLead": "Dharmendra",
+    "femaleLead": "Sharmila Tagore",
+    "genre": ["Comedy", "Romance"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 44,
+    "title": "Mili",
+    "year": 1975,
+    "maleLead": "Amitabh Bachchan",
+    "femaleLead": "Jaya Bachchan",
+    "genre": ["Drama", "Romance"],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 45,
+    "title": "Mausam",
+    "year": 1975,
+    "maleLead": "Sanjeev Kumar",
+    "femaleLead": "Sharmila Tagore",
+    "genre": ["Drama", "Romance"],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 46,
+    "title": "Chhoti Si Baat",
+    "year": 1976,
+    "maleLead": "Amol Palekar",
+    "femaleLead": "Vidya Sinha",
+    "genre": ["Comedy", "Romance"],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 47,
+    "title": "Kabhi Kabhie",
+    "year": 1976,
+    "maleLead": "Amitabh Bachchan",
+    "femaleLead": "Raakhee",
+    "genre": ["Romance", "Drama"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 48,
+    "title": "Amar Akbar Anthony",
+    "year": 1977,
+    "maleLead": "Amitabh Bachchan",
+    "femaleLead": "Parveen Babi",
+    "genre": ["Comedy", "Action"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 49,
+    "title": "Don",
+    "year": 1978,
+    "maleLead": "Amitabh Bachchan",
+    "femaleLead": "Zeenat Aman",
+    "genre": ["Action", "Crime"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 50,
+    "title": "Muqaddar Ka Sikandar",
+    "year": 1978,
+    "maleLead": "Amitabh Bachchan",
+    "femaleLead": "Raakhee",
+    "genre": ["Drama", "Romance"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 51,
+    "title": "Trishul",
+    "year": 1978,
+    "maleLead": "Amitabh Bachchan",
+    "femaleLead": "Raakhee",
+    "genre": ["Drama", "Action"],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 52,
+    "title": "Satyam Shivam Sundaram",
+    "year": 1978,
+    "maleLead": "Shashi Kapoor",
+    "femaleLead": "Zeenat Aman",
+    "genre": ["Romance", "Drama"],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 53,
+    "title": "Gol Maal",
+    "year": 1979,
+    "maleLead": "Amol Palekar",
+    "femaleLead": "Bindiya Goswami",
+    "genre": ["Comedy"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 54,
+    "title": "Mr. Natwarlal",
+    "year": 1979,
+    "maleLead": "Amitabh Bachchan",
+    "femaleLead": "Rekha",
+    "genre": ["Comedy", "Action"],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 55,
+    "title": "Kaala Patthar",
+    "year": 1979,
+    "maleLead": "Amitabh Bachchan",
+    "femaleLead": "Shatrughan Sinha",
+    "genre": ["Drama", "Action"],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 56,
+    "title": "Naseeb",
+    "year": 1981,
+    "maleLead": "Amitabh Bachchan",
+    "femaleLead": "Hema Malini",
+    "genre": ["Action", "Comedy"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 57,
+    "title": "Silsila",
+    "year": 1981,
+    "maleLead": "Amitabh Bachchan",
+    "femaleLead": "Rekha",
+    "genre": ["Romance", "Drama"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 58,
+    "title": "Yaarana",
+    "year": 1981,
+    "maleLead": "Amitabh Bachchan",
+    "femaleLead": "Neetu Singh",
+    "genre": ["Drama", "Musical"],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 59,
+    "title": "Umrao Jaan",
+    "year": 1981,
+    "maleLead": "Farooq Shaikh",
+    "femaleLead": "Rekha",
+    "genre": ["Drama", "Romance"],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 60,
+    "title": "Namak Halaal",
+    "year": 1982,
+    "maleLead": "Amitabh Bachchan",
+    "femaleLead": "Smita Patil",
+    "genre": ["Comedy", "Drama"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 61,
+    "title": "Shakti",
+    "year": 1982,
+    "maleLead": "Amitabh Bachchan",
+    "femaleLead": "Smita Patil",
+    "genre": ["Action", "Drama"],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 62,
+    "title": "Disco Dancer",
+    "year": 1982,
+    "maleLead": "Mithun Chakraborty",
+    "femaleLead": "Kim Yashpal",
+    "genre": ["Musical", "Drama"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 63,
+    "title": "Coolie",
+    "year": 1983,
+    "maleLead": "Amitabh Bachchan",
+    "femaleLead": "Rati Agnihotri",
+    "genre": ["Action", "Drama"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 64,
+    "title": "Hero",
+    "year": 1983,
+    "maleLead": "Jackie Shroff",
+    "femaleLead": "Meenakshi Seshadri",
+    "genre": ["Action", "Romance"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 65,
+    "title": "Masoom",
+    "year": 1983,
+    "maleLead": "Naseeruddin Shah",
+    "femaleLead": "Shabana Azmi",
+    "genre": ["Drama"],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 66,
+    "title": "Sohni Mahiwal",
+    "year": 1984,
+    "maleLead": "Sunny Deol",
+    "femaleLead": "Poonam Dhillon",
+    "genre": ["Romance", "Drama"],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 67,
+    "title": "Sharaabi",
+    "year": 1984,
+    "maleLead": "Amitabh Bachchan",
+    "femaleLead": "Jaya Prada",
+    "genre": ["Drama", "Comedy"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 68,
+    "title": "Saaransh",
+    "year": 1984,
+    "maleLead": "Anupam Kher",
+    "femaleLead": "Rohini Hattangadi",
     "genre": ["Drama"],
     "difficulty": "Hard"
   },
   {
-    "id": 8,
-    "title": "Taxi Driver",
-    "year": 1954,
-    "maleLead": "Dev Anand",
-    "femaleLead": "Kalpana Kartik",
-    "genre": ["Crime", "Romance"],
-    "difficulty": "Easy"
-  },
-  {
-    "id": 9,
-    "title": "Shree 420",
-    "year": 1955,
-    "maleLead": "Raj Kapoor",
-    "femaleLead": "Nargis",
-    "genre": ["Comedy", "Drama"],
-    "difficulty": "Easy"
-  },
-  {
-    "id": 10,
-    "title": "Devdas",
-    "year": 1955,
-    "maleLead": "Dilip Kumar",
-    "femaleLead": "Suchitra Sen",
-    "genre": ["Drama", "Romance"],
-    "difficulty": "Easy"
-  },
-  {
-    "id": 11,
-    "title": "Mr. & Mrs. 55",
-    "year": 1955,
-    "maleLead": "Guru Dutt",
-    "femaleLead": "Madhubala",
-    "genre": ["Comedy", "Romance"],
-    "difficulty": "Easy"
-  },
-  {
-    "id": 12,
-    "title": "Chori Chori",
-    "year": 1956,
-    "maleLead": "Raj Kapoor",
-    "femaleLead": "Nargis",
-    "genre": ["Romance", "Comedy"],
-    "difficulty": "Easy"
-  },
-  {
-    "id": 13,
-    "title": "C.I.D.",
-    "year": 1956,
-    "maleLead": "Dev Anand",
-    "femaleLead": "Waheeda Rehman",
-    "genre": ["Crime", "Mystery"],
-    "difficulty": "Easy"
-  },
-  {
-    "id": 14,
-    "title": "Jagte Raho",
-    "year": 1956,
-    "maleLead": "Raj Kapoor",
-    "femaleLead": "Nargis",
-    "genre": ["Drama"],
-    "difficulty": "Medium"
-  },
-  {
-    "id": 15,
-    "title": "Pyaasa",
-    "year": 1957,
-    "maleLead": "Guru Dutt",
-    "femaleLead": "Waheeda Rehman",
-    "genre": ["Drama", "Romance"],
-    "difficulty": "Easy"
-  },
-  {
-    "id": 16,
-    "title": "Mother India",
-    "year": 1957,
-    "maleLead": "Sunil Dutt",
-    "femaleLead": "Nargis",
-    "genre": ["Drama"],
-    "difficulty": "Easy"
-  },
-  {
-    "id": 17,
-    "title": "Naya Daur",
-    "year": 1957,
-    "maleLead": "Dilip Kumar",
-    "femaleLead": "Vyjayanthimala",
-    "genre": ["Drama", "Romance"],
-    "difficulty": "Easy"
-  },
-  {
-    "id": 18,
-    "title": "Chalti Ka Naam Gaadi",
-    "year": 1958,
-    "maleLead": "Kishore Kumar",
-    "femaleLead": "Madhubala",
-    "genre": ["Comedy", "Romance"],
-    "difficulty": "Easy"
-  },
-  {
-    "id": 19,
-    "title": "Madhumati",
-    "year": 1958,
-    "maleLead": "Dilip Kumar",
-    "femaleLead": "Vyjayanthimala",
-    "genre": ["Drama", "Romance"],
-    "difficulty": "Easy"
-  },
-  {
-    "id": 20,
-    "title": "Kaagaz Ke Phool",
-    "year": 1959,
-    "maleLead": "Guru Dutt",
-    "femaleLead": "Waheeda Rehman",
-    "genre": ["Drama", "Romance"],
-    "difficulty": "Medium"
-  },
-  {
-    "id": 21,
-    "title": "Anari",
-    "year": 1959,
-    "maleLead": "Raj Kapoor",
-    "femaleLead": "Nutan",
-    "genre": ["Comedy", "Romance"],
-    "difficulty": "Easy"
-  },
-  {
-    "id": 22,
-    "title": "Mughal-e-Azam",
-    "year": 1960,
-    "maleLead": "Dilip Kumar",
-    "femaleLead": "Madhubala",
-    "genre": ["Historical", "Drama"],
-    "difficulty": "Easy"
-  },
-  {
-    "id": 23,
-    "title": "Jis Desh Mein Ganga Behti Hai",
-    "year": 1960,
-    "maleLead": "Raj Kapoor",
-    "femaleLead": "Padmini",
-    "genre": ["Drama", "Romance"],
-    "difficulty": "Medium"
-  },
-  {
-    "id": 24,
-    "title": "Guide",
-    "year": 1965,
-    "maleLead": "Dev Anand",
-    "femaleLead": "Waheeda Rehman",
-    "genre": ["Drama", "Romance"],
-    "difficulty": "Easy"
-  },
-  {
-    "id": 25,
-    "title": "Jewel Thief",
-    "year": 1967,
-    "maleLead": "Dev Anand",
-    "femaleLead": "Vyjayanthimala",
-    "genre": ["Mystery", "Thriller"],
-    "difficulty": "Easy"
-  },
-  {
-    "id": 26,
-    "title": "Upkar",
-    "year": 1967,
-    "maleLead": "Manoj Kumar",
-    "femaleLead": "Asha Parekh",
-    "genre": ["Drama"],
-    "difficulty": "Medium"
-  },
-  {
-    "id": 27,
-    "title": "Padosan",
-    "year": 1968,
-    "maleLead": "Sunil Dutt",
-    "femaleLead": "Saira Banu",
-    "genre": ["Comedy", "Romance"],
-    "difficulty": "Easy"
-  },
-  {
-    "id": 28,
-    "title": "Brahmachari",
-    "year": 1968,
-    "maleLead": "Shammi Kapoor",
-    "femaleLead": "Rajshree",
-    "genre": ["Comedy", "Drama"],
-    "difficulty": "Medium"
-  },
-  {
-    "id": 29,
-    "title": "Aradhana",
-    "year": 1969,
-    "maleLead": "Rajesh Khanna",
-    "femaleLead": "Sharmila Tagore",
+    "id": 69,
+    "title": "Ram Teri Ganga Maili",
+    "year": 1985,
+    "maleLead": "Rajiv Kapoor",
+    "femaleLead": "Mandakini",
     "genre": ["Romance", "Drama"],
     "difficulty": "Easy"
   },
   {
-    "id": 30,
-    "title": "Do Raaste",
-    "year": 1969,
-    "maleLead": "Rajesh Khanna",
-    "femaleLead": "Mumtaz",
+    "id": 70,
+    "title": "Meri Jung",
+    "year": 1985,
+    "maleLead": "Anil Kapoor",
+    "femaleLead": "Meenakshi Seshadri",
+    "genre": ["Action", "Drama"],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 71,
+    "title": "Saagar",
+    "year": 1985,
+    "maleLead": "Rishi Kapoor",
+    "femaleLead": "Dimple Kapadia",
+    "genre": ["Romance", "Drama"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 72,
+    "title": "Karma",
+    "year": 1986,
+    "maleLead": "Dilip Kumar",
+    "femaleLead": "Nutan",
+    "genre": ["Action", "Drama"],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 73,
+    "title": "Mr. India",
+    "year": 1987,
+    "maleLead": "Anil Kapoor",
+    "femaleLead": "Sridevi",
+    "genre": ["Action", "Comedy"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 74,
+    "title": "Tezaab",
+    "year": 1988,
+    "maleLead": "Anil Kapoor",
+    "femaleLead": "Madhuri Dixit",
+    "genre": ["Action", "Romance"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 75,
+    "title": "Qayamat Se Qayamat Tak",
+    "year": 1988,
+    "maleLead": "Aamir Khan",
+    "femaleLead": "Juhi Chawla",
+    "genre": ["Romance", "Drama"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 76,
+    "title": "Shahenshah",
+    "year": 1988,
+    "maleLead": "Amitabh Bachchan",
+    "femaleLead": "Meenakshi Seshadri",
+    "genre": ["Action", "Drama"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 77,
+    "title": "Chandni",
+    "year": 1989,
+    "maleLead": "Rishi Kapoor",
+    "femaleLead": "Sridevi",
+    "genre": ["Romance", "Drama"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 78,
+    "title": "Maine Pyar Kiya",
+    "year": 1989,
+    "maleLead": "Salman Khan",
+    "femaleLead": "Bhagyashree",
+    "genre": ["Romance", "Drama"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 79,
+    "title": "Ram Lakhan",
+    "year": 1989,
+    "maleLead": "Anil Kapoor",
+    "femaleLead": "Madhuri Dixit",
+    "genre": ["Action", "Drama"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 80,
+    "title": "Tridev",
+    "year": 1989,
+    "maleLead": "Sunny Deol",
+    "femaleLead": "Madhuri Dixit",
+    "genre": ["Action", "Drama"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 81,
+    "title": "Parinda",
+    "year": 1989,
+    "maleLead": "Anil Kapoor",
+    "femaleLead": "Madhuri Dixit",
+    "genre": ["Crime", "Drama"],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 82,
+    "title": "ChaalBaaz",
+    "year": 1989,
+    "maleLead": "Sunny Deol",
+    "femaleLead": "Sridevi",
+    "genre": ["Comedy", "Action"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 83,
+    "title": "Ram Avtar",
+    "year": 1988,
+    "maleLead": "Sunny Deol",
+    "femaleLead": "Sridevi",
+    "genre": ["Action", "Drama"],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 84,
+    "title": "Aakhree Raasta",
+    "year": 1986,
+    "maleLead": "Amitabh Bachchan",
+    "femaleLead": "Sridevi",
+    "genre": ["Action", "Drama"],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 85,
+    "title": "Dosti",
+    "year": 1986,
+    "maleLead": "Mithun Chakraborty",
+    "femaleLead": "Padmini Kolhapure",
     "genre": ["Drama", "Romance"],
+    "difficulty": "Hard"
+  },
+  {
+    "id": 86,
+    "title": "Khubsoorat",
+    "year": 1980,
+    "maleLead": "Rakesh Roshan",
+    "femaleLead": "Rekha",
+    "genre": ["Comedy", "Romance"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 87,
+    "title": "Karz",
+    "year": 1980,
+    "maleLead": "Rishi Kapoor",
+    "femaleLead": "Tina Munim",
+    "genre": ["Thriller", "Romance"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 88,
+    "title": "Kranti",
+    "year": 1981,
+    "maleLead": "Manoj Kumar",
+    "femaleLead": "Hema Malini",
+    "genre": ["Action", "Historical"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 89,
+    "title": "Prem Rog",
+    "year": 1982,
+    "maleLead": "Rishi Kapoor",
+    "femaleLead": "Padmini Kolhapure",
+    "genre": ["Romance", "Drama"],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 90,
+    "title": "Betaab",
+    "year": 1983,
+    "maleLead": "Sunny Deol",
+    "femaleLead": "Amrita Singh",
+    "genre": ["Romance", "Drama"],
     "difficulty": "Easy"
   }
 ]
