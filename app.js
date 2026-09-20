@@ -1,35 +1,4 @@
-const movies = [
-    {
-        title: "Sholay",
-        year: 1975,
-        maleLead: "Amitabh Bachchan",
-        femaleLead: "Hema Malini"
-    },
-    {
-        title: "Dilwale Dulhania Le Jayenge",
-        year: 1995,
-        maleLead: "Shah Rukh Khan",
-        femaleLead: "Kajol"
-    },
-    {
-        title: "3 Idiots",
-        year: 2009,
-        maleLead: "Aamir Khan",
-        femaleLead: "Kareena Kapoor"
-    },
-    {
-        title: "Kabhi Khushi Kabhie Gham",
-        year: 2001,
-        maleLead: "Shah Rukh Khan",
-        femaleLead: "Kajol"
-    },
-    {
-        title: "Lagaan",
-        year: 2001,
-        maleLead: "Aamir Khan",
-        femaleLead: "Gracy Singh"
-    }
-];
+let movies = [];
 
 let usedMovies = [];
 let currentMovie = null;
@@ -48,6 +17,45 @@ let gameState = "idle";
 
 
 // =====================================
+// LOAD MOVIES
+// =====================================
+
+async function loadMovies() {
+
+    try {
+
+        const response =
+            await fetch("movies.json");
+
+        if (!response.ok) {
+            throw new Error("Could not load movies.json");
+        }
+
+        movies = await response.json();
+
+        console.log(
+            `Loaded ${movies.length} movies`
+        );
+
+    } catch (error) {
+
+        console.error(error);
+
+        document.getElementById("status").textContent =
+            "⚠️ Movie database could not load.";
+
+        document.getElementById("rollButton").disabled =
+            true;
+    }
+}
+
+
+// Load database immediately
+
+loadMovies();
+
+
+// =====================================
 // SETTINGS PANEL
 // =====================================
 
@@ -62,15 +70,20 @@ function toggleSettings() {
     content.classList.toggle("open");
 
     if (content.classList.contains("open")) {
-        arrow.style.transform = "rotate(180deg)";
+
+        arrow.style.transform =
+            "rotate(180deg)";
+
     } else {
-        arrow.style.transform = "rotate(0deg)";
+
+        arrow.style.transform =
+            "rotate(0deg)";
     }
 }
 
 
 // =====================================
-// SETTINGS VALUES
+// SETTINGS
 // =====================================
 
 const revealSelect =
@@ -86,55 +99,57 @@ const customTimeInput =
     document.getElementById("customTime");
 
 
-// Reveal time
+revealSelect.addEventListener(
+    "change",
+    function () {
 
-revealSelect.addEventListener("change", function () {
-
-    revealTime = Number(this.value);
-
-});
-
-
-// Acting time
-
-actingSelect.addEventListener("change", function () {
-
-    if (this.value === "custom") {
-
-        customTimeBox.classList.add("show");
-
-        actingTime =
-            Number(customTimeInput.value) || 60;
-
-    } else {
-
-        customTimeBox.classList.remove("show");
-
-        actingTime =
+        revealTime =
             Number(this.value);
 
     }
+);
 
-});
 
+actingSelect.addEventListener(
+    "change",
+    function () {
 
-// Custom acting time
+        if (this.value === "custom") {
 
-customTimeInput.addEventListener("input", function () {
+            customTimeBox.classList.add("show");
 
-    let value = Number(this.value);
+            actingTime =
+                Number(customTimeInput.value) || 60;
 
-    if (value < 5) {
-        value = 5;
+        } else {
+
+            customTimeBox.classList.remove("show");
+
+            actingTime =
+                Number(this.value);
+        }
     }
+);
 
-    if (value > 600) {
-        value = 600;
+
+customTimeInput.addEventListener(
+    "input",
+    function () {
+
+        let value =
+            Number(this.value);
+
+        if (value < 5) {
+            value = 5;
+        }
+
+        if (value > 600) {
+            value = 600;
+        }
+
+        actingTime = value;
     }
-
-    actingTime = value;
-
-});
+);
 
 
 // =====================================
@@ -150,8 +165,19 @@ function rollMovie() {
         return;
     }
 
+
+    if (movies.length === 0) {
+
+        document.getElementById("status").textContent =
+            "⏳ Loading movies...";
+
+        return;
+    }
+
+
     clearInterval(revealTimer);
     clearInterval(actingTimer);
+
 
     gameState = "reveal";
 
@@ -191,23 +217,25 @@ function rollMovie() {
     dice.classList.add("dice-roll");
 
 
-    // Reset movie pool
+    // Reset pool when every movie has been used
 
     if (usedMovies.length >= movies.length) {
+
         usedMovies = [];
+
     }
 
 
-    // Available movies
+    // Find unused movies
 
     const availableMovies =
         movies.filter(
             movie =>
-                !usedMovies.includes(movie.title)
+                !usedMovies.includes(movie.id)
         );
 
 
-    // Random movie
+    // Pick random movie
 
     currentMovie =
         availableMovies[
@@ -217,7 +245,8 @@ function rollMovie() {
             )
         ];
 
-    usedMovies.push(currentMovie.title);
+
+    usedMovies.push(currentMovie.id);
 
 
     // Display movie
@@ -243,7 +272,9 @@ function rollMovie() {
 
 function startRevealCountdown() {
 
-    let remaining = revealTime;
+    let remaining =
+        revealTime;
+
 
     updateTimer(remaining);
 
@@ -314,7 +345,7 @@ function startActingTimer() {
     gameState = "acting";
 
 
-    // NO TIMER
+    // No timer
 
     if (actingTime === 0) {
 
@@ -325,7 +356,9 @@ function startActingTimer() {
     }
 
 
-    let remaining = actingTime;
+    let remaining =
+        actingTime;
+
 
     updateTimer(remaining);
 
@@ -389,7 +422,7 @@ function correctAnswer() {
         "✓";
 
 
-    // Show answer again
+    // Show answer
 
     document.getElementById("movieYear").style.display =
         "block";
@@ -496,8 +529,10 @@ function finishRound(reason) {
         document.getElementById("actors").style.display =
             "block";
 
+
         document.getElementById("hint").textContent =
             "THE ANSWER WAS";
+
 
         document.getElementById("movieTitle").textContent =
             currentMovie.title;
