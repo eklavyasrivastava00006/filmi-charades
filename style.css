@@ -1,0 +1,263 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-dark: #050303;
+    --bg-red: #240909;
+    --gold: #d7b35a;
+    --gold-bright: #f3d477;
+    --text: #ffffff;
+    --muted: #aaa;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: var(--text);
+
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            #5a1717 0%,
+            #210808 35%,
+            #090303 70%
+        );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    overflow-x: hidden;
+}
+
+/* Main game container */
+
+.game {
+    width: 100%;
+    max-width: 430px;
+    text-align: center;
+}
+
+/* Logo */
+
+.logo {
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 2px;
+
+    text-shadow:
+        0 0 10px rgba(243, 212, 119, 0.25);
+}
+
+.subtitle {
+    margin-top: 8px;
+    margin-bottom: 35px;
+
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+/* Movie card */
+
+.movie-card {
+    min-height: 270px;
+
+    padding: 35px 22px;
+
+    border-radius: 26px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(55, 18, 18, 0.95),
+            rgba(15, 5, 5, 0.98)
+        );
+
+    border: 1px solid rgba(243, 212, 119, 0.28);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.65),
+        inset 0 0 40px rgba(255, 255, 255, 0.02);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* Golden glow */
+
+.movie-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    background: rgba(215, 179, 90, 0.08);
+
+    filter: blur(60px);
+
+    top: -80px;
+    right: -50px;
+
+    border-radius: 50%;
+}
+
+/* Small label */
+
+.hint {
+    color: var(--muted);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+
+    position: relative;
+}
+
+/* Movie title */
+
+.movie-title {
+    font-size: 32px;
+
+    font-weight: 900;
+
+    line-height: 1.15;
+
+    margin-bottom: 10px;
+
+    position: relative;
+}
+
+/* Year */
+
+.year {
+    color: var(--gold-bright);
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    margin-bottom: 25px;
+
+    position: relative;
+}
+
+/* Actors */
+
+.actors {
+    color: #d0d0d0;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+    position: relative;
+}
+
+/* Roll button */
+
+.roll-button {
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 18px;
+
+    border: none;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f0ce68,
+            #a87817
+        );
+
+    color: #180b03;
+
+    font-size: 18px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px rgba(212, 175, 55, 0.25);
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.roll-button:active {
+    transform: scale(0.96);
+}
+
+.roll-button:hover {
+    box-shadow:
+        0 12px 35px rgba(212, 175, 55, 0.4);
+}
+
+/* Status */
+
+.status {
+    margin-top: 25px;
+
+    font-size: 25px;
+
+    font-weight: 900;
+
+    min-height: 30px;
+}
+
+/* Timer */
+
+.timer {
+    margin-top: 10px;
+
+    font-size: 58px;
+
+    font-weight: 900;
+
+    color: var(--gold-bright);
+
+    text-shadow:
+        0 0 20px rgba(243, 212, 119, 0.2);
+}
+
+/* Mobile */
+
+@media (max-width: 400px) {
+
+    .logo {
+        font-size: 27px;
+    }
+
+    .movie-title {
+        font-size: 27px;
+    }
+
+    .movie-card {
+        min-height: 250px;
+    }
+
+}
