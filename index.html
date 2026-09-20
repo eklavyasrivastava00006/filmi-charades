@@ -53,6 +53,137 @@
     </div>
 
 
+    <!-- SETTINGS -->
+
+    <section class="settings-panel">
+
+        <button
+            class="settings-toggle"
+            id="settingsToggle"
+            onclick="toggleSettings()">
+
+            ⚙️ GAME SETTINGS
+
+            <span id="settingsArrow">▼</span>
+
+        </button>
+
+
+        <div
+            class="settings-content"
+            id="settingsContent">
+
+            <!-- REVEAL TIME -->
+
+            <div class="setting-row">
+
+                <div class="setting-info">
+
+                    <strong>👀 Reveal Time</strong>
+
+                    <span>
+                        How long the movie is shown
+                    </span>
+
+                </div>
+
+                <select id="revealTimeSelect">
+
+                    <option value="3">
+                        3 sec
+                    </option>
+
+                    <option value="5" selected>
+                        5 sec
+                    </option>
+
+                    <option value="7">
+                        7 sec
+                    </option>
+
+                    <option value="10">
+                        10 sec
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- ACTING TIME -->
+
+            <div class="setting-row">
+
+                <div class="setting-info">
+
+                    <strong>🎭 Acting Time</strong>
+
+                    <span>
+                        Time available to act
+                    </span>
+
+                </div>
+
+                <select id="actingTimeSelect">
+
+                    <option value="30">
+                        30 sec
+                    </option>
+
+                    <option value="45">
+                        45 sec
+                    </option>
+
+                    <option value="60" selected>
+                        60 sec
+                    </option>
+
+                    <option value="90">
+                        90 sec
+                    </option>
+
+                    <option value="120">
+                        120 sec
+                    </option>
+
+                    <option value="custom">
+                        Custom
+                    </option>
+
+                    <option value="0">
+                        No Timer
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- CUSTOM TIME -->
+
+            <div
+                class="custom-time"
+                id="customTimeBox">
+
+                <label for="customTime">
+                    Custom seconds
+                </label>
+
+                <input
+                    type="number"
+                    id="customTime"
+                    min="5"
+                    max="600"
+                    value="60"
+                    placeholder="Enter seconds">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
     <!-- GAME CARD -->
 
     <main class="movie-card" id="movieCard">
@@ -75,9 +206,12 @@
             Your movie will appear here
         </div>
 
+
         <!-- COUNTDOWN -->
 
-        <div class="countdown-ring" id="countdownRing">
+        <div
+            class="countdown-ring"
+            id="countdownRing">
 
             <span id="timer">
                 5
@@ -130,7 +264,6 @@
         ROLL DICE
 
     </button>
-
 
 </div>
 
