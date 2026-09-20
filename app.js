@@ -37,46 +37,101 @@ let currentMovie = null;
 let revealTime = 5;
 let actingTime = 60;
 
-let revealTimer;
-let actingTimer;
+let revealTimer = null;
+let actingTimer = null;
+
+let round = 0;
+let score = 0;
+let streak = 0;
+
+let gameRunning = false;
 
 
-// ------------------------------------
+// ================================
 // ROLL MOVIE
-// ------------------------------------
+// ================================
 
 function rollMovie() {
+
+    if (gameRunning) {
+        return;
+    }
 
     clearInterval(revealTimer);
     clearInterval(actingTimer);
 
+    gameRunning = true;
+
+    round++;
+
+    updateStats();
+
     // Reset screen
 
-    document.getElementById("status").textContent = "";
-    document.getElementById("timer").textContent = "";
+    document.getElementById("status").textContent =
+        "MEMORIZE!";
 
-    // Reset used list when all movies are used
+    document.getElementById("hint").textContent =
+        "YOUR MOVIE";
+
+    document.getElementById("movieYear").style.display =
+        "block";
+
+    document.getElementById("actors").style.display =
+        "block";
+
+    document.getElementById("countdownRing").style.display =
+        "flex";
+
+
+    // Dice animation
+
+    const dice = document.querySelector(".dice");
+
+    dice.classList.remove("dice-roll");
+
+    void dice.offsetWidth;
+
+    dice.classList.add("dice-roll");
+
+
+    // Reset used list
 
     if (usedMovies.length === movies.length) {
         usedMovies = [];
     }
 
-    // Find unused movies
+
+    // Find available movies
 
     const availableMovies = movies.filter(
         movie => !usedMovies.includes(movie.title)
     );
 
+
     // Select random movie
 
     currentMovie =
         availableMovies[
-            Math.floor(Math.random() * availableMovies.length)
+            Math.floor(
+                Math.random() * availableMovies.length
+            )
         ];
 
     usedMovies.push(currentMovie.title);
 
-    // Show movie
+
+    // Display movie
+
+    const movieCard =
+        document.getElementById("movieCard");
+
+    movieCard.classList.remove("movie-reveal");
+
+    void movieCard.offsetWidth;
+
+    movieCard.classList.add("movie-reveal");
+
 
     document.getElementById("movieTitle").textContent =
         currentMovie.title;
@@ -88,32 +143,28 @@ function rollMovie() {
         `👨 ${currentMovie.maleLead}<br>
          👩 ${currentMovie.femaleLead}`;
 
-    document.getElementById("status").textContent =
-        "🎬 MEMORIZE!";
 
-    // Start reveal countdown
+    // Start reveal
 
     startRevealCountdown();
 }
 
 
-// ------------------------------------
-// 5 SECOND REVEAL
-// ------------------------------------
+// ================================
+// REVEAL COUNTDOWN
+// ================================
 
 function startRevealCountdown() {
 
     let remaining = revealTime;
 
-    document.getElementById("timer").textContent =
-        remaining;
+    updateTimer(remaining);
 
     revealTimer = setInterval(() => {
 
         remaining--;
 
-        document.getElementById("timer").textContent =
-            remaining;
+        updateTimer(remaining);
 
         if (remaining <= 0) {
 
@@ -128,20 +179,38 @@ function startRevealCountdown() {
 }
 
 
-// ------------------------------------
+// ================================
 // HIDE MOVIE
-// ------------------------------------
+// ================================
 
 function hideMovie() {
 
-    document.getElementById("movieTitle").textContent =
+    document.getElementById("movieYear").style.display =
+        "none";
+
+    document.getElementById("actors").style.display =
+        "none";
+
+    document.getElementById("hint").textContent =
+        "YOUR TURN";
+
+
+    const title =
+        document.getElementById("movieTitle");
+
+    title.textContent =
         "🤫 ACT NOW!";
 
-    document.getElementById("movieYear").textContent =
-        "";
 
-    document.getElementById("actors").innerHTML =
-        "";
+    const movieCard =
+        document.getElementById("movieCard");
+
+    movieCard.classList.remove("act-now");
+
+    void movieCard.offsetWidth;
+
+    movieCard.classList.add("act-now");
+
 
     document.getElementById("status").textContent =
         "DON'T SAY THE MOVIE!";
@@ -149,27 +218,31 @@ function hideMovie() {
 }
 
 
-// ------------------------------------
+// ================================
 // ACTING TIMER
-// ------------------------------------
+// ================================
 
 function startActingTimer() {
 
     let remaining = actingTime;
 
-    document.getElementById("timer").textContent =
-        remaining;
+    updateTimer(remaining);
 
     actingTimer = setInterval(() => {
 
         remaining--;
 
-        document.getElementById("timer").textContent =
-            remaining;
+        updateTimer(remaining);
 
         if (remaining <= 0) {
 
             clearInterval(actingTimer);
+
+            gameRunning = false;
+
+            streak = 0;
+
+            updateStats();
 
             document.getElementById("status").textContent =
                 "⏰ TIME'S UP!";
@@ -177,4 +250,113 @@ function startActingTimer() {
         }
 
     }, 1000);
+}
+
+
+// ================================
+// CORRECT ANSWER
+// ================================
+
+function correctAnswer() {
+
+    if (!gameRunning || !currentMovie) {
+        return;
+    }
+
+    clearInterval(revealTimer);
+    clearInterval(actingTimer);
+
+    gameRunning = false;
+
+    streak++;
+
+    // Base score
+
+    let points = 100;
+
+    // Streak bonus
+
+    points += streak * 25;
+
+    score += points;
+
+    updateStats();
+
+    document.getElementById("status").textContent =
+        `🎉 CORRECT! +${points}`;
+
+    document.getElementById("timer").textContent =
+        "✓";
+
+    document.getElementById("movieYear").style.display =
+        "block";
+
+    document.getElementById("actors").style.display =
+        "block";
+
+    document.getElementById("movieTitle").textContent =
+        currentMovie.title;
+
+    document.getElementById("movieYear").textContent =
+        currentMovie.year;
+
+    document.getElementById("actors").innerHTML =
+        `👨 ${currentMovie.maleLead}<br>
+         👩 ${currentMovie.femaleLead}`;
+}
+
+
+// ================================
+// SKIP
+// ================================
+
+function skipMovie() {
+
+    if (!gameRunning || !currentMovie) {
+        return;
+    }
+
+    clearInterval(revealTimer);
+    clearInterval(actingTimer);
+
+    gameRunning = false;
+
+    streak = 0;
+
+    updateStats();
+
+    document.getElementById("status").textContent =
+        "↻ MOVIE SKIPPED";
+
+    document.getElementById("timer").textContent =
+        "—";
+
+}
+
+
+// ================================
+// UPDATE STATS
+// ================================
+
+function updateStats() {
+
+    document.getElementById("round").textContent =
+        round;
+
+    document.getElementById("score").textContent =
+        score;
+
+    document.getElementById("streak").textContent =
+        streak;
+}
+
+
+// ================================
+// TIMER DISPLAY
+// ================================
+
+function updateTimer(value) {
+
+    document.getElementById("timer").textContent =
+        value;
 }
