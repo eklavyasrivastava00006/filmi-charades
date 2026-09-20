@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "title": "Awaara",
+    "year": 1951,
+    "maleLead": "Raj Kapoor",
+    "femaleLead": "Nargis",
+    "genre": ["Drama", "Romance"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 2,
+    "title": "Shree 420",
+    "year": 1955,
+    "maleLead": "Raj Kapoor",
+    "femaleLead": "Nargis",
+    "genre": ["Comedy", "Drama"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 3,
+    "title": "Mother India",
+    "year": 1957,
+    "maleLead": "Sunil Dutt",
+    "femaleLead": "Nargis",
+    "genre": ["Drama"],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 4,
+    "title": "Mughal-e-Azam",
+    "year": 1960,
+    "maleLead": "Dilip Kumar",
+    "femaleLead": "Madhubala",
+    "genre": ["Historical", "Drama"],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 5,
+    "title": "Sholay",
+    "year": 1975,
+    "maleLead": "Amitabh Bachchan",
+    "femaleLead": "Hema Malini",
+    "genre": ["Action", "Drama"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 6,
+    "title": "Dilwale Dulhania Le Jayenge",
+    "year": 1995,
+    "maleLead": "Shah Rukh Khan",
+    "femaleLead": "Kajol",
+    "genre": ["Romance", "Drama"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 7,
+    "title": "Lagaan",
+    "year": 2001,
+    "maleLead": "Aamir Khan",
+    "femaleLead": "Gracy Singh",
+    "genre": ["Drama", "Sports"],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 8,
+    "title": "Kabhi Khushi Kabhie Gham",
+    "year": 2001,
+    "maleLead": "Shah Rukh Khan",
+    "femaleLead": "Kajol",
+    "genre": ["Drama", "Romance"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 9,
+    "title": "3 Idiots",
+    "year": 2009,
+    "maleLead": "Aamir Khan",
+    "femaleLead": "Kareena Kapoor",
+    "genre": ["Comedy", "Drama"],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 10,
+    "title": "Gully Boy",
+    "year": 2019,
+    "maleLead": "Ranveer Singh",
+    "femaleLead": "Alia Bhatt",
+    "genre": ["Drama", "Music"],
+    "difficulty": "Easy"
+  }
+]
