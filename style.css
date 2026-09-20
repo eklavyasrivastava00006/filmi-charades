@@ -36,8 +36,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Cinematic light */
-
 body::before {
     content: "";
 
@@ -58,7 +56,10 @@ body::before {
     pointer-events: none;
 }
 
-/* Main game */
+
+/* =====================================
+   MAIN GAME
+===================================== */
 
 .game {
     width: 100%;
@@ -71,7 +72,10 @@ body::before {
     z-index: 1;
 }
 
-/* Header */
+
+/* =====================================
+   HEADER
+===================================== */
 
 .top-bar {
     margin-bottom: 20px;
@@ -100,7 +104,10 @@ body::before {
     color: var(--gold);
 }
 
-/* Stats */
+
+/* =====================================
+   STATS
+===================================== */
 
 .stats {
     display: grid;
@@ -140,7 +147,208 @@ body::before {
     color: var(--gold-light);
 }
 
-/* Movie card */
+
+/* =====================================
+   SETTINGS
+===================================== */
+
+.settings-panel {
+    margin-bottom: 14px;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(55, 12, 12, 0.92),
+            rgba(10, 3, 3, 0.96)
+        );
+
+    border: 1px solid rgba(255, 215, 120, 0.16);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Settings button */
+
+.settings-toggle {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--gold-light);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+}
+
+.settings-toggle:active {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+#settingsArrow {
+    transition: transform 0.25s ease;
+}
+
+
+/* Settings content */
+
+.settings-content {
+    display: none;
+
+    padding: 4px 14px 14px;
+
+    border-top: 1px solid rgba(255, 215, 120, 0.08);
+}
+
+.settings-content.open {
+    display: block;
+}
+
+
+/* Setting row */
+
+.setting-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 13px 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.setting-info {
+    text-align: left;
+
+    flex: 1;
+}
+
+.setting-info strong {
+    display: block;
+
+    font-size: 12px;
+
+    color: #fff;
+
+    margin-bottom: 4px;
+}
+
+.setting-info span {
+    display: block;
+
+    font-size: 9px;
+
+    line-height: 1.4;
+
+    color: #888;
+}
+
+
+/* Select */
+
+.setting-row select {
+    min-width: 92px;
+
+    padding: 9px 8px;
+
+    border-radius: 10px;
+
+    border: 1px solid rgba(255, 215, 120, 0.25);
+
+    background: #160707;
+
+    color: var(--gold-light);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+.setting-row select:focus {
+    border-color: var(--gold);
+}
+
+
+/* Custom time */
+
+.custom-time {
+    display: none;
+
+    padding-top: 13px;
+
+    text-align: left;
+}
+
+.custom-time.show {
+    display: block;
+}
+
+.custom-time label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #999;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+.custom-time input {
+    width: 100%;
+
+    padding: 11px;
+
+    border-radius: 10px;
+
+    border: 1px solid rgba(255, 215, 120, 0.2);
+
+    background: #100404;
+
+    color: white;
+
+    outline: none;
+
+    font-size: 13px;
+}
+
+.custom-time input:focus {
+    border-color: var(--gold);
+}
+
+
+/* =====================================
+   MOVIE CARD
+===================================== */
 
 .movie-card {
     min-height: 390px;
@@ -179,8 +387,6 @@ body::before {
         box-shadow 0.35s ease;
 }
 
-/* Card glow */
-
 .movie-light {
     position: absolute;
 
@@ -199,7 +405,10 @@ body::before {
     pointer-events: none;
 }
 
-/* Small heading */
+
+/* =====================================
+   MOVIE CONTENT
+===================================== */
 
 .hint {
     position: relative;
@@ -214,8 +423,6 @@ body::before {
 
     margin-bottom: 18px;
 }
-
-/* Movie title */
 
 .movie-title {
     position: relative;
@@ -234,8 +441,6 @@ body::before {
         0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
-/* Year */
-
 .year {
     position: relative;
 
@@ -248,8 +453,6 @@ body::before {
     margin-bottom: 22px;
 }
 
-/* Actors */
-
 .actors {
     position: relative;
 
@@ -260,7 +463,10 @@ body::before {
     line-height: 1.9;
 }
 
-/* Countdown ring */
+
+/* =====================================
+   COUNTDOWN
+===================================== */
 
 .countdown-ring {
     width: 76px;
@@ -299,7 +505,10 @@ body::before {
     color: var(--gold-light);
 }
 
-/* Status */
+
+/* =====================================
+   STATUS
+===================================== */
 
 .status {
     min-height: 30px;
@@ -313,7 +522,10 @@ body::before {
     letter-spacing: 1px;
 }
 
-/* Action buttons */
+
+/* =====================================
+   ACTION BUTTONS
+===================================== */
 
 .actions {
     display: grid;
@@ -361,7 +573,10 @@ body::before {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Roll button */
+
+/* =====================================
+   ROLL BUTTON
+===================================== */
 
 .roll-button {
     width: 100%;
@@ -418,11 +633,14 @@ body::before {
     transition: transform 0.4s ease;
 }
 
-/* Dice animation */
-
 .dice-roll {
     animation: diceRoll 0.55s ease;
 }
+
+
+/* =====================================
+   ANIMATIONS
+===================================== */
 
 @keyframes diceRoll {
 
@@ -438,8 +656,6 @@ body::before {
         transform: rotate(360deg) scale(1);
     }
 }
-
-/* Movie reveal */
 
 .movie-reveal {
     animation: movieReveal 0.55s ease;
@@ -457,8 +673,6 @@ body::before {
         transform: scale(1) translateY(0);
     }
 }
-
-/* Act now */
 
 .act-now {
     animation: actNow 0.45s ease;
@@ -481,7 +695,10 @@ body::before {
     }
 }
 
-/* Mobile */
+
+/* =====================================
+   MOBILE
+===================================== */
 
 @media (max-width: 400px) {
 
@@ -504,5 +721,17 @@ body::before {
     .countdown-ring {
         width: 68px;
         height: 68px;
+    }
+
+    .setting-row {
+        gap: 7px;
+    }
+
+    .setting-info strong {
+        font-size: 11px;
+    }
+
+    .setting-row select {
+        min-width: 82px;
     }
 }
