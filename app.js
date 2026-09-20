@@ -44,44 +44,41 @@ let round = 0;
 let score = 0;
 let streak = 0;
 
-let gameRunning = false;
+let gameState = "idle";
+// idle → reveal → acting → finished
 
 
-// ================================
-// ROLL MOVIE
-// ================================
+// =====================================
+// ROLL
+// =====================================
 
 function rollMovie() {
 
-    if (gameRunning) {
+    // Don't allow another roll during a round
+    if (gameState === "reveal" || gameState === "acting") {
         return;
     }
 
     clearInterval(revealTimer);
     clearInterval(actingTimer);
 
-    gameRunning = true;
+    gameState = "reveal";
 
     round++;
 
     updateStats();
 
-    // Reset screen
+    // Reset movie display
 
-    document.getElementById("status").textContent =
-        "MEMORIZE!";
+    document.getElementById("movieYear").style.display = "block";
+    document.getElementById("actors").style.display = "block";
+    document.getElementById("countdownRing").style.display = "flex";
 
     document.getElementById("hint").textContent =
         "YOUR MOVIE";
 
-    document.getElementById("movieYear").style.display =
-        "block";
-
-    document.getElementById("actors").style.display =
-        "block";
-
-    document.getElementById("countdownRing").style.display =
-        "flex";
+    document.getElementById("status").textContent =
+        "MEMORIZE!";
 
 
     // Dice animation
@@ -95,43 +92,31 @@ function rollMovie() {
     dice.classList.add("dice-roll");
 
 
-    // Reset used list
+    // Reset movie pool
 
-    if (usedMovies.length === movies.length) {
+    if (usedMovies.length >= movies.length) {
         usedMovies = [];
     }
 
 
-    // Find available movies
+    // Find unused movies
 
     const availableMovies = movies.filter(
         movie => !usedMovies.includes(movie.title)
     );
 
 
-    // Select random movie
+    // Random movie
 
     currentMovie =
         availableMovies[
-            Math.floor(
-                Math.random() * availableMovies.length
-            )
+            Math.floor(Math.random() * availableMovies.length)
         ];
 
     usedMovies.push(currentMovie.title);
 
 
     // Display movie
-
-    const movieCard =
-        document.getElementById("movieCard");
-
-    movieCard.classList.remove("movie-reveal");
-
-    void movieCard.offsetWidth;
-
-    movieCard.classList.add("movie-reveal");
-
 
     document.getElementById("movieTitle").textContent =
         currentMovie.title;
@@ -144,15 +129,15 @@ function rollMovie() {
          👩 ${currentMovie.femaleLead}`;
 
 
-    // Start reveal
+    // Start countdown
 
     startRevealCountdown();
 }
 
 
-// ================================
+// =====================================
 // REVEAL COUNTDOWN
-// ================================
+// =====================================
 
 function startRevealCountdown() {
 
@@ -160,7 +145,7 @@ function startRevealCountdown() {
 
     updateTimer(remaining);
 
-    revealTimer = setInterval(() => {
+    revealTimer = setInterval(function () {
 
         remaining--;
 
@@ -169,6 +154,7 @@ function startRevealCountdown() {
         if (remaining <= 0) {
 
             clearInterval(revealTimer);
+            revealTimer = null;
 
             hideMovie();
 
@@ -179,9 +165,9 @@ function startRevealCountdown() {
 }
 
 
-// ================================
+// =====================================
 // HIDE MOVIE
-// ================================
+// =====================================
 
 function hideMovie() {
 
@@ -194,13 +180,11 @@ function hideMovie() {
     document.getElementById("hint").textContent =
         "YOUR TURN";
 
-
-    const title =
-        document.getElementById("movieTitle");
-
-    title.textContent =
+    document.getElementById("movieTitle").textContent =
         "🤫 ACT NOW!";
 
+    document.getElementById("status").textContent =
+        "DON'T SAY THE MOVIE!";
 
     const movieCard =
         document.getElementById("movieCard");
@@ -210,25 +194,22 @@ function hideMovie() {
     void movieCard.offsetWidth;
 
     movieCard.classList.add("act-now");
-
-
-    document.getElementById("status").textContent =
-        "DON'T SAY THE MOVIE!";
-
 }
 
 
-// ================================
+// =====================================
 // ACTING TIMER
-// ================================
+// =====================================
 
 function startActingTimer() {
+
+    gameState = "acting";
 
     let remaining = actingTime;
 
     updateTimer(remaining);
 
-    actingTimer = setInterval(() => {
+    actingTimer = setInterval(function () {
 
         remaining--;
 
@@ -237,48 +218,36 @@ function startActingTimer() {
         if (remaining <= 0) {
 
             clearInterval(actingTimer);
+            actingTimer = null;
 
-            gameRunning = false;
-
-            streak = 0;
-
-            updateStats();
-
-            document.getElementById("status").textContent =
-                "⏰ TIME'S UP!";
-
+            finishRound("timeout");
         }
 
     }, 1000);
 }
 
 
-// ================================
-// CORRECT ANSWER
-// ================================
+// =====================================
+// CORRECT
+// =====================================
 
 function correctAnswer() {
 
-    if (!gameRunning || !currentMovie) {
+    // Only works during acting phase
+    if (gameState !== "acting") {
         return;
     }
 
-    clearInterval(revealTimer);
     clearInterval(actingTimer);
-
-    gameRunning = false;
+    actingTimer = null;
 
     streak++;
 
-    // Base score
-
-    let points = 100;
-
-    // Streak bonus
-
-    points += streak * 25;
+    const points = 100 + (streak * 25);
 
     score += points;
+
+    gameState = "finished";
 
     updateStats();
 
@@ -288,11 +257,17 @@ function correctAnswer() {
     document.getElementById("timer").textContent =
         "✓";
 
+
+    // Show movie again
+
     document.getElementById("movieYear").style.display =
         "block";
 
     document.getElementById("actors").style.display =
         "block";
+
+    document.getElementById("hint").textContent =
+        "CORRECT ANSWER";
 
     document.getElementById("movieTitle").textContent =
         currentMovie.title;
@@ -306,37 +281,76 @@ function correctAnswer() {
 }
 
 
-// ================================
+// =====================================
 // SKIP
-// ================================
+// =====================================
 
 function skipMovie() {
 
-    if (!gameRunning || !currentMovie) {
+    // Only works during an active round
+    if (gameState !== "reveal" &&
+        gameState !== "acting") {
         return;
     }
 
     clearInterval(revealTimer);
     clearInterval(actingTimer);
 
-    gameRunning = false;
+    revealTimer = null;
+    actingTimer = null;
+
+    streak = 0;
+
+    gameState = "finished";
+
+    updateStats();
+
+    document.getElementById("hint").textContent =
+        "SKIPPED";
+
+    document.getElementById("movieTitle").textContent =
+        "↻ SKIPPED";
+
+    document.getElementById("movieYear").style.display =
+        "none";
+
+    document.getElementById("actors").style.display =
+        "none";
+
+    document.getElementById("status").textContent =
+        "Ready for the next movie";
+
+    document.getElementById("timer").textContent =
+        "—";
+}
+
+
+// =====================================
+// TIME'S UP
+// =====================================
+
+function finishRound(reason) {
+
+    gameState = "finished";
 
     streak = 0;
 
     updateStats();
 
-    document.getElementById("status").textContent =
-        "↻ MOVIE SKIPPED";
+    if (reason === "timeout") {
 
-    document.getElementById("timer").textContent =
-        "—";
+        document.getElementById("status").textContent =
+            "⏰ TIME'S UP!";
 
+        document.getElementById("timer").textContent =
+            "0";
+    }
 }
 
 
-// ================================
-// UPDATE STATS
-// ================================
+// =====================================
+// STATS
+// =====================================
 
 function updateStats() {
 
@@ -351,9 +365,9 @@ function updateStats() {
 }
 
 
-// ================================
-// TIMER DISPLAY
-// ================================
+// =====================================
+// TIMER
+// =====================================
 
 function updateTimer(value) {
 
