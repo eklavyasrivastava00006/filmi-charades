@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Filmi Charades</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background:
+                radial-gradient(circle at top, #3b1010, #100707 55%, #050303);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .game {
+            width: 100%;
+            max-width: 430px;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #d7b36a;
+            font-size: 13px;
+            letter-spacing: 2px;
+            margin-bottom: 35px;
+        }
+
+        .movie-card {
+            min-height: 260px;
+            padding: 30px 20px;
+            border-radius: 25px;
+            background: linear-gradient(145deg, #241010, #120707);
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hint {
+            color: #aaa;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .movie-title {
+            font-size: 30px;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        .year {
+            color: #d7b36a;
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .actors {
+            color: #ccc;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .roll-button {
+            margin-top: 25px;
+            width: 100%;
+            padding: 18px;
+            border: none;
+            border-radius: 18px;
+            background: linear-gradient(135deg, #d4af37, #9b7014);
+            color: #160909;
+            font-size: 20px;
+            font-weight: 900;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(212,175,55,0.25);
+        }
+
+        .roll-button:active {
+            transform: scale(0.97);
+        }
+
+        .status {
+            margin-top: 25px;
+            font-size: 25px;
+            font-weight: 900;
+        }
+
+        .timer {
+            font-size: 55px;
+            font-weight: 900;
+            margin-top: 15px;
+            color: #d7b36a;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="game">
+
+    <div class="logo">🎬 FILMI CHARADES</div>
+
+    <div class="subtitle">
+        FIND YOUR MOVIE TO ACT
+    </div>
+
+    <div class="movie-card">
+
+        <div class="hint">
+            YOUR MOVIE
+        </div>
+
+        <div class="movie-title" id="movieTitle">
+            Ready?
+        </div>
+
+        <div class="year" id="movieYear">
+            🎲 Roll the dice
+        </div>
+
+        <div class="actors" id="actors">
+            Your movie will appear here
+        </div>
+
+    </div>
+
+    <button class="roll-button" onclick="rollMovie()">
+        🎲 ROLL DICE
+    </button>
+
+    <div class="status" id="status"></div>
+
+    <div class="timer" id="timer"></div>
+
+</div>
+
+<script>
+
+function rollMovie() {
+
+    document.getElementById("movieTitle").textContent =
+        "Sholay";
+
+    document.getElementById("movieYear").textContent =
+        "1975";
+
+    document.getElementById("actors").innerHTML =
+        "👨 Amitabh Bachchan<br>👩 Hema Malini";
+
+    document.getElementById("status").textContent =
+        "🎬 GET READY!";
+
+    document.getElementById("timer").textContent =
+        "5";
+
+}
+
+</script>
+
+</body>
+</html>
