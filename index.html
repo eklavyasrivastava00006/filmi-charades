@@ -1,55 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Filmi Charades</title>
 
- <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <div class="game">
 
-    <div class="logo">🎬 FILMI CHARADES</div>
+    <!-- HEADER -->
 
-    <div class="subtitle">
-        FIND YOUR MOVIE TO ACT
+    <header class="top-bar">
+
+        <div class="brand">
+            🎬 FILMI CHARADES
+        </div>
+
+        <div class="tagline">
+            FIND YOUR MOVIE TO ACT
+        </div>
+
+    </header>
+
+
+    <!-- SCORE -->
+
+    <div class="stats">
+
+        <div class="stat">
+            <span>ROUND</span>
+            <strong id="round">0</strong>
+        </div>
+
+        <div class="stat">
+            <span>SCORE</span>
+            <strong id="score">0</strong>
+        </div>
+
+        <div class="stat">
+            <span>STREAK</span>
+            <strong id="streak">0</strong>
+        </div>
+
     </div>
 
-    <div class="movie-card">
 
-        <div class="hint">
-            YOUR MOVIE
+    <!-- GAME CARD -->
+
+    <main class="movie-card" id="movieCard">
+
+        <div class="movie-light"></div>
+
+        <div class="hint" id="hint">
+            READY?
         </div>
 
         <div class="movie-title" id="movieTitle">
-            Ready?
+            🎬
         </div>
 
         <div class="year" id="movieYear">
-            🎲 Roll the dice
+            Roll the dice
         </div>
 
         <div class="actors" id="actors">
             Your movie will appear here
         </div>
 
+        <!-- COUNTDOWN -->
+
+        <div class="countdown-ring" id="countdownRing">
+
+            <span id="timer">
+                5
+            </span>
+
+        </div>
+
+    </main>
+
+
+    <!-- STATUS -->
+
+    <div class="status" id="status">
+        Ready?
     </div>
 
-    <button class="roll-button" onclick="rollMovie()">
-        🎲 ROLL DICE
+
+    <!-- ACTION BUTTONS -->
+
+    <div class="actions">
+
+        <button
+            class="action-button correct"
+            onclick="correctAnswer()">
+
+            ✓ CORRECT
+
+        </button>
+
+        <button
+            class="action-button skip"
+            onclick="skipMovie()">
+
+            ↻ SKIP
+
+        </button>
+
+    </div>
+
+
+    <!-- ROLL -->
+
+    <button
+        class="roll-button"
+        id="rollButton"
+        onclick="rollMovie()">
+
+        <span class="dice">🎲</span>
+
+        ROLL DICE
+
     </button>
 
-    <div class="status" id="status"></div>
-
-    <div class="timer" id="timer"></div>
 
 </div>
+
 
 <script src="app.js"></script>
 
 </body>
+
 </html>
